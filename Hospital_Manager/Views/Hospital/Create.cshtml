@@ -1,0 +1,52 @@
+﻿@model Hospital_Manager.ViewModels.Hospital.HospitalCreateViewModel
+
+<h1>Добавяне на болница</h1>
+
+<form asp-action="Create" method="post">
+
+    <label>Име на болница:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <br />
+    <br />
+
+    <label>Адрес:</label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+
+    <br />
+    <br />
+
+    <label>Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <br />
+    <br />
+
+    <label>Телефон:</label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+   
+    <br />
+    <br />
+
+    <label>Брой легла:</label>
+    <input asp-for="BedsCount" />
+    <span asp-validation-for="BedsCount"></span>
+
+    <br />
+    <br />
+
+    <button type="submit">Запази</button>
+   
+</form>
+<a asp-action="Index">Назад към списъка</a>
+   
+
+    
+
+<br />
+
+<a href="/Hospital/Index">Покажи всички болници</a>

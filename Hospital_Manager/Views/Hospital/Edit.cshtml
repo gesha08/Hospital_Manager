@@ -1,0 +1,50 @@
+﻿@model Hospital_Manager.ViewModels.Hospital.HospitalEditViewModel
+
+<h1>Редактиране на болница</h1>
+
+<form asp-action="Edit" method="post">
+
+    <input asp-for="Id" type="hidden" />
+
+    <label>Име:</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <br />
+    <br />
+
+    <label>Адрес:</label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+
+    <br />
+    <br />
+
+    <label>Email:</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <br />
+    <br />
+
+    <label>Телефон:</label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+
+    <br />
+    <br />
+
+    <label>Брой легла:</label>
+    <input asp-for="BedsCount" />
+    <span asp-validation-for="BedsCount"></span>
+
+    <br />
+    <br />
+
+    <button type="submit">Запази промените</button>
+
+</form>
+
+<br />
+
+<a asp-action="Index">Назад към списъка</a>

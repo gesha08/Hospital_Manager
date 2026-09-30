@@ -1,0 +1,36 @@
+﻿@model Hospital_Manager.ViewModels.Hospital.HospitalDeleteViewModel
+
+<h1>Изтриване на болница</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете тази болница?</h3>
+
+<div>
+
+    <hr />
+
+    <dl>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        
+
+    </dl>
+
+    <form asp-action="Delete" method="post">
+
+        <input asp-for="Id" type="hidden" />
+
+        <input type="submit" value="Delete" />
+
+        |
+
+        <a asp-action="Index">Back to List</a>
+
+    </form>
+
+</div>

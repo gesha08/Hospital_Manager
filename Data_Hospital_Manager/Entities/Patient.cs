@@ -14,5 +14,6 @@ namespace Data_Hospital_Manager.Entities
         [Required][MaxLength(30)] public string LastName { get; set; }
         [Required][EmailAddress] public string Email { get; set; }
         [Required][Phone] public string PhoneNumber { get; set; }
+        public List<DoctorPatient> DoctorPatients { get; set; } = new List<DoctorPatient>();
     }
 }

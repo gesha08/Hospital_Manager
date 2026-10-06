@@ -27,7 +27,8 @@ namespace Data_Hospital_Manager
             modelBuilder.Entity<DoctorPatient>()
                 .HasKey(dp => new { dp.DoctorId, dp.PatientId });
             
-
+            modelBuilder.Entity<DoctorPatient>().HasOne(dp=>dp.Doctor).WithMany(dp=>dp.DoctorPatients).HasForeignKey(dp=>dp.DoctorId).OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<DoctorPatient>().HasOne(dp=>dp.Patient).WithMany(x=>x.DoctorPatients).HasForeignKey(x=>x.PatientId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

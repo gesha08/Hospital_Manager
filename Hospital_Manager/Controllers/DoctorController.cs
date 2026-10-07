@@ -43,6 +43,8 @@ namespace Hospital_Manager.Controllers
         {
             var doctor = await context.Doctors
                 .Include(d => d.Hospital)
+                .Include(x=>x.DoctorPatients)
+                    .ThenInclude(x=>x.Patient)
                 .FirstOrDefaultAsync(d => d.Id == id);
 
             if (doctor == null)
@@ -58,7 +60,9 @@ namespace Hospital_Manager.Controllers
                 Specialty = doctor.Specialty,
                 Email = doctor.Email,
                 PhoneNumber = doctor.PhoneNumber,
-                HospitalName = doctor.Hospital.Name
+                HospitalName = doctor.Hospital.Name,
+
+                PatientNames=doctor.DoctorPatients.Select(x=>x.Patient.FirstName+" "+x.Patient.LastName).ToList()
             };
 
             return View(model);
@@ -96,7 +100,6 @@ namespace Hospital_Manager.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            //Вземи болниците от БД и ги сложи във ViewBag.Hospitals.
                         ViewBag.Hospitals = new SelectList(
                 await context.Hospitals
                     .Where(h => !h.IsDeleted)

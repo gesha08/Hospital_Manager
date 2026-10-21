@@ -1,4 +1,4 @@
-@model Hospital_Manager.ViewModels.Patient.PatientEditViewModel
+﻿@model Hospital_Manager.ViewModels.Patient.PatientEditViewModel
 
 @{
     ViewData["Title"] = "Edit Patient";
@@ -52,7 +52,7 @@
                 <select asp-for="DoctorIds"
                         asp-items="ViewBag.Doctors"
                         class="form-control"
-                        multiple="multiple">
+                multiple="multiple">
                 </select>
 
                 <span asp-validation-for="DoctorIds"

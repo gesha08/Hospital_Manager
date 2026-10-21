@@ -5,10 +5,10 @@ namespace Hospital_Manager.ViewModels.Patient
     public class PatientEditViewModel
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "")]                                                                                                                                                               
+        [Required(ErrorMessage = "Първото име е задължително.")]                                                                                                                                                               
         [StringLength(30, ErrorMessage = "Първото име не може да е повече от 30 букви.")]
         public string FirstName { get; set; }
-        [Required(ErrorMessage = "")]
+        [Required(ErrorMessage = "Фамилното име е задължително")]
         [StringLength(30, ErrorMessage = "Фамилното име не може да е повече от 30 букви.")]
         public string LastName { get; set; }
         [Required(ErrorMessage = "Имейлът е задължителен.")]
@@ -18,6 +18,5 @@ namespace Hospital_Manager.ViewModels.Patient
         [Phone(ErrorMessage = "Въведи валиден телефонен номер.")]
         public string PhoneNumber { get; set; }
         public List<int> DoctorIds { get; set; } = new List<int>();
-
     }
 }

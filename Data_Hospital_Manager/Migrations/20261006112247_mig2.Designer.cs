@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Hospital_Manager.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    [Migration("20261001100948_patient")]
-    partial class patient
+    [Migration("20261006112247_mig2")]
+    partial class mig2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,7 +78,7 @@ namespace Data_Hospital_Manager.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("DoctorPatient");
+                    b.ToTable("DoctorPatients");
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.Hospital", b =>

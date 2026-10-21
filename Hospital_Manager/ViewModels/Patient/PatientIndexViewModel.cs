@@ -7,6 +7,6 @@
         public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        public string DoctorNames { get; set; }
+        public string DoctorName { get; set; }
     }
 }

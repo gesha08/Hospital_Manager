@@ -5,13 +5,13 @@
 namespace Data_Hospital_Manager.Migrations
 {
     /// <inheritdoc />
-    public partial class patient : Migration
+    public partial class mig2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "DoctorPatient",
+                name: "DoctorPatients",
                 columns: table => new
                 {
                     DoctorId = table.Column<int>(type: "int", nullable: false),
@@ -19,15 +19,15 @@ namespace Data_Hospital_Manager.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_DoctorPatient", x => new { x.DoctorId, x.PatientId });
+                    table.PrimaryKey("PK_DoctorPatients", x => new { x.DoctorId, x.PatientId });
                     table.ForeignKey(
-                        name: "FK_DoctorPatient_Doctors_DoctorId",
+                        name: "FK_DoctorPatients_Doctors_DoctorId",
                         column: x => x.DoctorId,
                         principalTable: "Doctors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_DoctorPatient_Patients_PatientId",
+                        name: "FK_DoctorPatients_Patients_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patients",
                         principalColumn: "Id",
@@ -35,8 +35,8 @@ namespace Data_Hospital_Manager.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_DoctorPatient_PatientId",
-                table: "DoctorPatient",
+                name: "IX_DoctorPatients_PatientId",
+                table: "DoctorPatients",
                 column: "PatientId");
         }
 
@@ -44,7 +44,7 @@ namespace Data_Hospital_Manager.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "DoctorPatient");
+                name: "DoctorPatients");
         }
     }
 }

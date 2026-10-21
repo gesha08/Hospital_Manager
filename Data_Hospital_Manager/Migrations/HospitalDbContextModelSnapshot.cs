@@ -75,7 +75,7 @@ namespace Data_Hospital_Manager.Migrations
 
                     b.HasIndex("PatientId");
 
-                    b.ToTable("DoctorPatient");
+                    b.ToTable("DoctorPatients");
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.Hospital", b =>

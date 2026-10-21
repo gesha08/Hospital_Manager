@@ -1,4 +1,4 @@
-@model IEnumerable<Hospital_Manager.ViewModels.Patient.PatientIndexViewModel>
+﻿@model IEnumerable<Hospital_Manager.ViewModels.Patient.PatientIndexViewModel>
 
 @{
     ViewData["Title"] = "Patients";
@@ -20,13 +20,7 @@
                 @Html.DisplayNameFor(model => model.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoctorNames)
+                @Html.DisplayNameFor(model => model.DoctorName)
             </th>
             <th></th>
         </tr>
@@ -43,13 +37,7 @@
                     @Html.DisplayFor(modelItem => patient.LastName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => patient.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => patient.PhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => patient.DoctorNames)
+                    @Html.DisplayFor(modelItem => patient.DoctorName)
                 </td>
                 <td>
                     <a asp-action="Edit"

@@ -61,6 +61,38 @@ namespace Data_Hospital_Manager.Migrations
                     b.HasIndex("HospitalId");
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "ivan.petrov@hospital.bg",
+                            FirstName = "Иван",
+                            HospitalId = 1,
+                            LastName = "Петров",
+                            PhoneNumber = "+359888123456",
+                            Specialty = "Кардиолог"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "maria.ivanova@hospital.bg",
+                            FirstName = "Мария",
+                            HospitalId = 2,
+                            LastName = "Иванова",
+                            PhoneNumber = "+359888234567",
+                            Specialty = "Педиатр"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "georgi.simeonov@hospital.bg",
+                            FirstName = "Георги",
+                            HospitalId = 1,
+                            LastName = "Симеонов",
+                            PhoneNumber = "+359888345678",
+                            Specialty = "Хирург"
+                        });
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.DoctorPatient", b =>
@@ -76,6 +108,23 @@ namespace Data_Hospital_Manager.Migrations
                     b.HasIndex("PatientId");
 
                     b.ToTable("DoctorPatients");
+
+                    b.HasData(
+                        new
+                        {
+                            DoctorId = 1,
+                            PatientId = 1
+                        },
+                        new
+                        {
+                            DoctorId = 1,
+                            PatientId = 2
+                        },
+                        new
+                        {
+                            DoctorId = 2,
+                            PatientId = 3
+                        });
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.Hospital", b =>
@@ -115,6 +164,30 @@ namespace Data_Hospital_Manager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Hospitals");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "бул. Шипченски проход 15, София",
+                            BedsCount = 500,
+                            CreatedOn = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "info@shipchenska.bg",
+                            IsDeleted = false,
+                            Name = "Болница Шипченска",
+                            PhoneNumber = "+35929876543"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "ул. Иван Вазов 8, Пловдив",
+                            BedsCount = 320,
+                            CreatedOn = new DateTime(2018, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "contact@svana.bg",
+                            IsDeleted = false,
+                            Name = "Св. Ана",
+                            PhoneNumber = "+35932987654"
+                        });
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.Patient", b =>
@@ -146,6 +219,32 @@ namespace Data_Hospital_Manager.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "anna.dimova@mail.bg",
+                            FirstName = "Анна",
+                            LastName = "Димова",
+                            PhoneNumber = "+359889111222"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "petar.stoyanov@mail.bg",
+                            FirstName = "Петър",
+                            LastName = "Стоянов",
+                            PhoneNumber = "+359889222333"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "elena.kevagi@mail.bg",
+                            FirstName = "Елена",
+                            LastName = "Кевагиева",
+                            PhoneNumber = "+359889333444"
+                        });
                 });
 
             modelBuilder.Entity("Data_Hospital_Manager.Entities.Doctor", b =>

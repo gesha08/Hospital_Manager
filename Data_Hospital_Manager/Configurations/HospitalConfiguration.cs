@@ -1,7 +1,11 @@
-using Data_Hospital_Manager.Entities;
+﻿using Data_Hospital_Manager.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Data_Hospital_Manager.Configurations
 {
@@ -13,26 +17,25 @@ namespace Data_Hospital_Manager.Configurations
                 new Hospital
                 {
                     Id = 1,
-                    Name = "Болница Шипченска",
-                    Address = "бул. Шипченски проход 15, София",
-                    Email = "info@shipchenska.bg",
-                    PhoneNumber = "+35929876543",
-                    BedsCount = 500,
-                    CreatedOn = new DateTime(2020, 1, 15),
-                    IsDeleted = false
+                    Name = "MBAL Kazanlak",
+                    Address = "Kazanlak",
+                    Email = "hospital@example.com",
+                    PhoneNumber = "123-456-7890",
+                    BedsCount = 200,
+                    CreatedOn = new DateTime(2026, 1, 1),
+                    IsDeleted = false,
                 },
                 new Hospital
                 {
                     Id = 2,
-                    Name = "Св. Ана",
-                    Address = "ул. Иван Вазов 8, Пловдив",
-                    Email = "contact@svana.bg",
-                    PhoneNumber = "+35932987654",
-                    BedsCount = 320,
-                    CreatedOn = new DateTime(2018, 5, 10),
-                    IsDeleted = false
-                }
-            );
+                    Name = "MBAL Stara Zagora",
+                    Address = "Stara Zagora",
+                    Email = "hospital2@example.com",
+                    PhoneNumber = "987-654-3210",
+                    BedsCount = 350,
+                    CreatedOn = new DateTime(2026, 1, 1),
+                    IsDeleted = false,
+                });
         }
     }
-}
+    }

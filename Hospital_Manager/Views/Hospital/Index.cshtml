@@ -13,7 +13,25 @@
         View Doctors
     </a>
 </p>
-
+<form asp-controller="Hospital" asp-action="Index" method="get">
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <input type="text" name="search"value="@ViewBag.Search" class="form-control" placeholder="Search by name..." /> 
+        </div>
+        <div class="col-md-3">
+        <input type="number" name="minbeds" value="@ViewBag.MinBeds" min="0" class="form-control"/>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Sort By</label>
+        <select name="sortOrder" class="form-control">
+            <option value="name"selected="@(ViewBag.SortOrder == "name")">Name A-Z</option>
+            <option value="beds_asc"selected="@(ViewBag.SortOrder == "beds_asc")">Beds Ascending</option>
+            <option value="beds_desc"selected="@(ViewBag.SortOrder == "beds_desc")">Beds Descending</option>
+        </select>
+        </div> 
+        <button type="submit">Search</button>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>

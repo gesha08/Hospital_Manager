@@ -21,10 +21,9 @@ namespace Hospital_Manager.Controllers
 
         
             
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? search,int? minbeds,string? sortorder)
         {
-            var hospitals = await service.GetAllHospitalsAsync();
-
+            var hospitals = await service.GetAllHospitalsAsync(search, minbeds, sortorder);
             var model = new List<HospitalIndexViewModel>();//празен списък за ViewModel-ите
 
             foreach (var hospital in hospitals)
@@ -40,6 +39,9 @@ namespace Hospital_Manager.Controllers
                 });
             }
 
+            ViewBag.Search = search;
+            ViewBag.MinBeds = minbeds;
+            ViewBag.SortOrder = sortorder;
             return View(model);//Изпращаме списъка към View
         }
         

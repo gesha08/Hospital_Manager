@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Hospital_Manager.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    [Migration("20261104060131_AddInitialData")]
-    partial class AddInitialData
+    [Migration("20261112095621_mig4")]
+    partial class mig4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,32 +69,22 @@ namespace Data_Hospital_Manager.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "ivan.petrov@hospital.bg",
-                            FirstName = "Иван",
+                            Email = "doctor@example.com",
+                            FirstName = "Dimitar",
                             HospitalId = 1,
-                            LastName = "Петров",
-                            PhoneNumber = "+359888123456",
-                            Specialty = "Кардиолог"
+                            LastName = "Dimitrov",
+                            PhoneNumber = "123-456-7890",
+                            Specialty = "Neurology"
                         },
                         new
                         {
                             Id = 2,
-                            Email = "maria.ivanova@hospital.bg",
-                            FirstName = "Мария",
+                            Email = "doctor2@example.com",
+                            FirstName = "Ivan",
                             HospitalId = 2,
-                            LastName = "Иванова",
-                            PhoneNumber = "+359888234567",
-                            Specialty = "Педиатр"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Email = "georgi.simeonov@hospital.bg",
-                            FirstName = "Георги",
-                            HospitalId = 1,
-                            LastName = "Симеонов",
-                            PhoneNumber = "+359888345678",
-                            Specialty = "Хирург"
+                            LastName = "Ivanov",
+                            PhoneNumber = "987-654-3210",
+                            Specialty = "Cardiology"
                         });
                 });
 
@@ -126,7 +116,12 @@ namespace Data_Hospital_Manager.Migrations
                         new
                         {
                             DoctorId = 2,
-                            PatientId = 3
+                            PatientId = 1
+                        },
+                        new
+                        {
+                            DoctorId = 2,
+                            PatientId = 2
                         });
                 });
 
@@ -172,24 +167,24 @@ namespace Data_Hospital_Manager.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "бул. Шипченски проход 15, София",
-                            BedsCount = 500,
-                            CreatedOn = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "info@shipchenska.bg",
+                            Address = "Kazanlak",
+                            BedsCount = 200,
+                            CreatedOn = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "hospital@example.com",
                             IsDeleted = false,
-                            Name = "Болница Шипченска",
-                            PhoneNumber = "+35929876543"
+                            Name = "MBAL Kazanlak",
+                            PhoneNumber = "123-456-7890"
                         },
                         new
                         {
                             Id = 2,
-                            Address = "ул. Иван Вазов 8, Пловдив",
-                            BedsCount = 320,
-                            CreatedOn = new DateTime(2018, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "contact@svana.bg",
+                            Address = "Stara Zagora",
+                            BedsCount = 350,
+                            CreatedOn = new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "hospital2@example.com",
                             IsDeleted = false,
-                            Name = "Св. Ана",
-                            PhoneNumber = "+35932987654"
+                            Name = "MBAL Stara Zagora",
+                            PhoneNumber = "987-654-3210"
                         });
                 });
 
@@ -227,26 +222,18 @@ namespace Data_Hospital_Manager.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "anna.dimova@mail.bg",
-                            FirstName = "Анна",
-                            LastName = "Димова",
-                            PhoneNumber = "+359889111222"
+                            Email = "patient@example.com",
+                            FirstName = "Gosho",
+                            LastName = "Ch",
+                            PhoneNumber = "123-456-7890"
                         },
                         new
                         {
                             Id = 2,
-                            Email = "petar.stoyanov@mail.bg",
-                            FirstName = "Петър",
-                            LastName = "Стоянов",
-                            PhoneNumber = "+359889222333"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Email = "elena.kevagi@mail.bg",
-                            FirstName = "Елена",
-                            LastName = "Кевагиева",
-                            PhoneNumber = "+359889333444"
+                            Email = "patient2@example.com",
+                            FirstName = "Ivan",
+                            LastName = "Petrov",
+                            PhoneNumber = "987-654-3210"
                         });
                 });
 

@@ -9,7 +9,7 @@ namespace Business.Interfaces
 {
     public interface IDoctorService
     {
-        Task<List<Doctor>> GetAllDoctorsAsync();
+        Task<List<Doctor>> GetAllDoctorsAsync(string? search=null,string? specialty=null,string? sortOrder=null);
         Task<Doctor?> GetDoctorAsync(int id);
         Task AddDoctorAsync(Doctor doctor);
         Task UpdateDoctorAsync(Doctor doctor);

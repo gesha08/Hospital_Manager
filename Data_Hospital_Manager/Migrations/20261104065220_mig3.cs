@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data_Hospital_Manager.Migrations
 {
     /// <inheritdoc />
-    public partial class AddInitialData : Migration
+    public partial class mig3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,8 +18,8 @@ namespace Data_Hospital_Manager.Migrations
                 columns: new[] { "Id", "Address", "BedsCount", "CreatedOn", "Email", "IsDeleted", "Name", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, "бул. Шипченски проход 15, София", 500, new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "info@shipchenska.bg", false, "Болница Шипченска", "+35929876543" },
-                    { 2, "ул. Иван Вазов 8, Пловдив", 320, new DateTime(2018, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), "contact@svana.bg", false, "Св. Ана", "+35932987654" }
+                    { 1, "Kazanlak", 200, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "hospital@example.com", false, "MBAL Kazanlak", "123-456-7890" },
+                    { 2, "Stara Zagora", 350, new DateTime(2026, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "hospital2@example.com", false, "MBAL Stara Zagora", "987-654-3210" }
                 });
 
             migrationBuilder.InsertData(
@@ -27,9 +27,8 @@ namespace Data_Hospital_Manager.Migrations
                 columns: new[] { "Id", "Email", "FirstName", "LastName", "PhoneNumber" },
                 values: new object[,]
                 {
-                    { 1, "anna.dimova@mail.bg", "Анна", "Димова", "+359889111222" },
-                    { 2, "petar.stoyanov@mail.bg", "Петър", "Стоянов", "+359889222333" },
-                    { 3, "elena.kevagi@mail.bg", "Елена", "Кевагиева", "+359889333444" }
+                    { 1, "patient@example.com", "Gosho", "Ch", "123-456-7890" },
+                    { 2, "patient2@example.com", "Ivan", "Petrov", "987-654-3210" }
                 });
 
             migrationBuilder.InsertData(
@@ -37,9 +36,8 @@ namespace Data_Hospital_Manager.Migrations
                 columns: new[] { "Id", "Email", "FirstName", "HospitalId", "LastName", "PhoneNumber", "Specialty" },
                 values: new object[,]
                 {
-                    { 1, "ivan.petrov@hospital.bg", "Иван", 1, "Петров", "+359888123456", "Кардиолог" },
-                    { 2, "maria.ivanova@hospital.bg", "Мария", 2, "Иванова", "+359888234567", "Педиатр" },
-                    { 3, "georgi.simeonov@hospital.bg", "Георги", 1, "Симеонов", "+359888345678", "Хирург" }
+                    { 1, "doctor@example.com", "Dimitar", 1, "Dimitrov", "123-456-7890", "Neurology" },
+                    { 2, "doctor2@example.com", "Ivan", 2, "Ivanov", "987-654-3210", "Cardiology" }
                 });
 
             migrationBuilder.InsertData(
@@ -49,7 +47,8 @@ namespace Data_Hospital_Manager.Migrations
                 {
                     { 1, 1 },
                     { 1, 2 },
-                    { 2, 3 }
+                    { 2, 1 },
+                    { 2, 2 }
                 });
         }
 
@@ -69,12 +68,12 @@ namespace Data_Hospital_Manager.Migrations
             migrationBuilder.DeleteData(
                 table: "DoctorPatients",
                 keyColumns: new[] { "DoctorId", "PatientId" },
-                keyValues: new object[] { 2, 3 });
+                keyValues: new object[] { 2, 1 });
 
             migrationBuilder.DeleteData(
-                table: "Doctors",
-                keyColumn: "Id",
-                keyValue: 3);
+                table: "DoctorPatients",
+                keyColumns: new[] { "DoctorId", "PatientId" },
+                keyValues: new object[] { 2, 2 });
 
             migrationBuilder.DeleteData(
                 table: "Doctors",
@@ -95,11 +94,6 @@ namespace Data_Hospital_Manager.Migrations
                 table: "Patients",
                 keyColumn: "Id",
                 keyValue: 2);
-
-            migrationBuilder.DeleteData(
-                table: "Patients",
-                keyColumn: "Id",
-                keyValue: 3);
 
             migrationBuilder.DeleteData(
                 table: "Hospitals",

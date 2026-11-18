@@ -108,7 +108,6 @@ namespace Hospital_Manager.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            //Вземи болниците от БД и ги сложи във ViewBag.Hospitals.
                         ViewBag.Hospitals = new SelectList(
                 await service2.GetAllHospitalsAsync(),
                 "Id",

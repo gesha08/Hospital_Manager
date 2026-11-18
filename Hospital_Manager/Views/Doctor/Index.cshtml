@@ -27,7 +27,7 @@
         </select>
     </div>
     <div class="col-md-3 d-flex align-items-end">
-        button type="button" id="clearFilters" class="btn btn-secondary">Clear Filters</button>
+        <button type="button" id="clearFilters" class="btn btn-secondary">Clear Filters</button>
     </div>
 </div>
 
@@ -86,3 +86,14 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        window.doctorConfig = {
+            editUrl: '@Url.Action("Edit", "Doctor")',
+            detailsUrl: '@Url.Action("Details", "Doctor")',
+            deleteUrl: '@Url.Action("Delete", "Doctor")',
+            filterUrl: '@Url.Action("GetFilteredDoctors", "Doctor")'
+        };
+    </script>
+}
